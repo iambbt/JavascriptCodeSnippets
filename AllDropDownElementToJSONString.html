@@ -1,0 +1,28 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<input type="text" id="unit"/>
+<select id="month">
+  <option value="1">January</option>
+  <option value="2">Febrary</option>
+  <option value="3">March</option>
+  <option value="4">April</option>
+</select>
+<input type="button" id="click" value="Click"/>
+<br/>
+<span id="json"></span>
+<script>
+$("#click").click(function (){
+	var fulVal = [];
+  var unitVal = $("#unit").val();
+  console.log("Entering");
+  $("#month > option").each(function(){
+  	console.log("In loop");
+  	fulVal.push({
+    	"ID": this.value,
+      "IDVal": this.text,
+      "Unit": unitVal
+    });
+    console.log(fulVal);
+  });
+  $("#json").val(fulVal);
+});
+</script>
